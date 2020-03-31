@@ -91,7 +91,7 @@ int main()
 {
 	 wiringPiSetup();
 	 forward();
-   backward();
-   left();
-   right();
+       //backward();
+       //left();
+       //right();
 }
