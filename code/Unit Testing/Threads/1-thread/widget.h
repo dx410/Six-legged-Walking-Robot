@@ -24,9 +24,9 @@ public:
     ~Widget();
 
 private slots:
-    void creatConnection(); //创建一个新连接
-    void useConnection(); //使用当前连接
-    void receiveMessage(); //接收消息
+    void creatConnection(); 
+    void useConnection(); 
+    void receiveMessage(); 
 
     void openThreadBtnSlot();
     void closeThreadBtnSlot();
