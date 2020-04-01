@@ -4,7 +4,8 @@
 3. threads
 4. data from dht11 shown in ui
 5. data from MPU6050 shown in ui
-6. get video from camera in Raspberry Pi
+6. function parameter passing and write socket in array
+7. get video from camera in Raspberry Pi
 
 # Robot_Server
 Raspberry Pi is as the server. It creates the socket and send the data from sensors after connecting. 
