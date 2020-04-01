@@ -13,7 +13,7 @@ protected:
     virtual void run();
 
 private:
-    volatile bool isStop;       //isStop是易失性变量，需要用volatile进行申明
+    volatile bool isStop;       
 };
 
 
