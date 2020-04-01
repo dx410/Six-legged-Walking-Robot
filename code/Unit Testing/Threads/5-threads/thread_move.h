@@ -13,7 +13,7 @@ protected:
     virtual void run();
 
 private:
-    volatile bool isStop;       //isStop是易失性变量，需要用volatile进行申明
+    volatile bool isStop;       
 };
 
 class MyThread2 : public QThread
@@ -26,7 +26,7 @@ protected:
     virtual void run();
 
 private:
-    volatile bool isStop;       //isStop是易失性变量，需要用volatile进行申明
+    volatile bool isStop;       
 };
 
 class MyThread3 : public QThread
@@ -39,7 +39,7 @@ protected:
     virtual void run();
 
 private:
-    volatile bool isStop;       //isStop是易失性变量，需要用volatile进行申明
+    volatile bool isStop;       
 };
 
 class MyThread4 : public QThread
@@ -52,7 +52,7 @@ protected:
     virtual void run();
 
 private:
-    volatile bool isStop;       //isStop是易失性变量，需要用volatile进行申明
+    volatile bool isStop;       
 };
 
 class MyThread5 : public QThread
@@ -65,7 +65,7 @@ protected:
     virtual void run();
 
 private:
-    volatile bool isStop;       //isStop是易失性变量，需要用volatile进行申明
+    volatile bool isStop;       
 };
 
 #endif // THREAD_MOVE_H
