@@ -2,10 +2,11 @@
 1. use GPIO to drive 3 servos
 2. TCP communication between server and client
 3. threads
-4. data from dht11 shown in ui
-5. data from MPU6050 shown in ui
-6. function parameter passing and write socket in array
-7. get video from camera in Raspberry Pi
+4. timer test in ui
+5. data from dht11 shown in ui
+6. data from MPU6050 shown in ui
+7. function parameter passing and write socket in array
+8. get video from camera in Raspberry Pi
 
 # Robot_Server
 Raspberry Pi is as the server. It creates the socket and send the data from sensors after connecting. 
