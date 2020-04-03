@@ -25,10 +25,8 @@ void Widget::delay(double mSec)
 
 void Widget::myprocessing()
 {
- //   Sleeper::sleep(3);
     ui->label->setText("tmp");
     delay(3000);
- //   Sleeper::sleep(3);
     qDebug()<<"hi"<<endl;
     ui->label->setText("hi");
      qDebug()<<"ha"<<endl;
