@@ -5,7 +5,7 @@ Access to certain small and dangerous areas for detection
 Obtain some physical values through the sensor and camera and display it on the controller in real time
 ![image](https://github.com/dx410/Six-legged-Walking-Robot/blob/master/images/design.PNG)
 # hardware
-SG5010 server * 3   
+SG5010 servo * 3   
 Robot's legs made of aluminum and body made of Acrylic  
 Raspberry Pi exclusive camera    
 Temperature and humidity sensor dht11  
