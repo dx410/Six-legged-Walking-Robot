@@ -29,8 +29,8 @@ void Widget::myprocessing()
     delay(3000);
     qDebug()<<"hi"<<endl;
     ui->label->setText("hi");
-     qDebug()<<"ha"<<endl;
-    delay(0.003);
+    qDebug()<<"ha"<<endl;
+    delay(3000);
     ui->label->setText("he");
-     delay(3000);
+    delay(3000);
 }
