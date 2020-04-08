@@ -16,7 +16,7 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::delay(double mSec)
+void Widget::delay(int mSec)
 {
     QEventLoop loop;
     QTimer::singleShot(mSec, &loop, SLOT(quit()));
