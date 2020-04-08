@@ -18,7 +18,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-    void delay(double mSec);
+    void delay(int mSec);
      QTimer *timer;
 
 protected slots:
