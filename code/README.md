@@ -15,5 +15,6 @@
 
 # Robot_Client
 * Laptop is as the client. The ui is created based on QT. It connnects to server in the same WIFI, and recieve the data of sensors 
-* after connecting. The different buttoms have different functions, and each buttom can send different messages.
+after connecting. 
+* The different buttoms have different functions, and each buttom can send different messages.
 * use QT Creator to build and run.
