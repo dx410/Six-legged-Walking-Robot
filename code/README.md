@@ -11,7 +11,9 @@
 # Robot_Server
 Raspberry Pi is as the server. It creates the socket and send the data from sensors after connecting. 
 The control of the servos are in the threads and they can be run and stop depends on different messages received from client.
+use QT Creator to build and run
 
 # Robot_Client
 Laptop is as the client. The ui is created based on QT. It connnects to server in the same WIFI, and recieve the data of sensors 
 after connecting. The different buttoms have different functions, and each buttom can send different messages.
+use QT Creator to build and run
