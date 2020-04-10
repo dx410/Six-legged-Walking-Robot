@@ -20,4 +20,4 @@ QT
 # project video on twitter  
 https://twitter.com/SLrobot
 # contributors
-dx410 - Xiao Deng - entire code ; unit testing ( except sensors and video )
+dx410 - Xiao Deng - entire code integration ; unit testing ( except sensors and video )
