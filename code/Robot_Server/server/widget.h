@@ -47,7 +47,6 @@ public:
     ~Widget();
     int fd;
     QTimer *timer1;
-//    QTimer *timer2;
 
     void MPU_Init();
     short read_raw_data(int addr);
@@ -58,10 +57,9 @@ public:
      struct NetData
     {
      unsigned int length;
- //    unsigned int n1;
      double d1;
      double d2;
-     char name[32]; //这里数组可以，注意如果是指针指向堆空间，堆里数据要自己copy
+     char name[32];   // array
     };
 
 public slots:
@@ -70,9 +68,9 @@ public slots:
      void data_display(double &x, double &y);
 
 private slots:
-    void creatConnection(); //创建一个新连接
-    void useConnection(); //使用当前连接
-    void receiveMessage(); //接收消息
+    void creatConnection(); 
+    void useConnection(); 
+    void receiveMessage(); 
 
     void openThreadSlot1();
     void closeThreadSlot1();
@@ -98,7 +96,7 @@ private:
 
     int pinNumber =3;  //use gpio1 to read data
     uint32 databuf;
-//    volatile bool dht_read;
+
 
 };
 #endif // WIDGET_H
