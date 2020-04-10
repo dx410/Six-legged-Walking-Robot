@@ -13,11 +13,11 @@ Widget::Widget(QWidget *parent)
     thread4 = new MyThread4;
     thread5 = new MyThread5;
 
-    tcpServer = new QTcpServer(this); //服务器监听类
-       if(!tcpServer->listen(QHostAddress::Any,50007)) //服务器监听本机所有IP的50007端口
+    tcpServer = new QTcpServer(this); 
+       if(!tcpServer->listen(QHostAddress::Any,50007)) 
         {
-            qDebug() << tcpServer->errorString(); //Debug出错误信息
-            tcpServer->close(); //关闭监听
+            qDebug() << tcpServer->errorString(); 
+            tcpServer->close(); 
         }
 
         connect(tcpServer,SIGNAL(newConnection()),this,SLOT(creatConnection()));
@@ -29,13 +29,13 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::creatConnection() //槽函数:创建连接
+void Widget::creatConnection() 
 {
 
-    tcpSocket = new QTcpSocket(this); //socket类
+    tcpSocket = new QTcpSocket(this); 
 
     tcpSocket = tcpServer->nextPendingConnection();
-    useConnection(); //在这个函数中使用连接套接字
+    useConnection(); 
 }
 
 void Widget::useConnection()
@@ -46,7 +46,7 @@ void Widget::useConnection()
 
 }
 
-void Widget::receiveMessage() //槽函数：接收消息
+void Widget::receiveMessage() 
 {
 
     QByteArray receiveDate = tcpSocket->readAll();
@@ -180,12 +180,10 @@ void Widget::receiveMessage() //槽函数：接收消息
         }
         ui->textBrowser->insertPlainText(temp);
     }
-    if(temp=="data")
+    if(temp=="data")          //read data
     {
       timer1 = new QTimer(this);
       timer1->start(100);
-//      timer2 = new QTimer(this);
-//      timer2->start(100);
       wiringPiSetup();
       connect(timer1,SIGNAL(timeout()),this,SLOT(read_mpu_data()));
 //      connect(timer2,SIGNAL(timeout()),this,SLOT(data_display(double &x, double &y)));
@@ -198,15 +196,13 @@ void Widget::receiveMessage() //槽函数：接收消息
 /*          Movement Thread            */
 void Widget::openThreadSlot1()
 {
-    /*开启一个线程*/
     thread1->start();
-    qDebug()<<"主线程id："<<QThread::currentThreadId();
+    qDebug()<<"thread id："<<QThread::currentThreadId();
 }
 
 void Widget::closeThreadSlot1()
 {
-    /*关闭多线程*/
-    qDebug()<<tr("关闭线程1");
+    qDebug()<<tr("close thread1");
     if(thread1->isRunning())
      {
        thread1->closeThread();
@@ -217,15 +213,13 @@ void Widget::closeThreadSlot1()
 
 void Widget::openThreadSlot2()
 {
-    /*开启一个线程*/
     thread2->start();
-    qDebug()<<"主线程id："<<QThread::currentThreadId();
+    qDebug()<<"thread id："<<QThread::currentThreadId();
 }
 
 void Widget::closeThreadSlot2()
 {
-    /*关闭多线程*/
-    qDebug()<<tr("关闭线程2");
+    qDebug()<<tr("close thread2");
     if(thread2->isRunning())
      {
        thread2->closeThread();
@@ -236,15 +230,13 @@ void Widget::closeThreadSlot2()
 
 void Widget::openThreadSlot3()
 {
-    /*开启一个线程*/
     thread3->start();
-    qDebug()<<"主线程id："<<QThread::currentThreadId();
+    qDebug()<<"thread id："<<QThread::currentThreadId();
 }
 
 void Widget::closeThreadSlot3()
 {
-    /*关闭多线程*/
-    qDebug()<<tr("关闭线程3");
+    qDebug()<<tr("close thread3");
     if(thread3->isRunning())
      {
        thread3->closeThread();
@@ -255,15 +247,13 @@ void Widget::closeThreadSlot3()
 
 void Widget::openThreadSlot4()
 {
-    /*开启一个线程*/
     thread4->start();
-    qDebug()<<"主线程id："<<QThread::currentThreadId();
+    qDebug()<<"thread id："<<QThread::currentThreadId();
 }
 
 void Widget::closeThreadSlot4()
 {
-    /*关闭多线程*/
-    qDebug()<<tr("关闭线程4");
+    qDebug()<<tr("close thread4");
     if(thread4->isRunning())
      {
        thread4->closeThread();
@@ -274,15 +264,13 @@ void Widget::closeThreadSlot4()
 
 void Widget::openThreadSlot5()
 {
-    /*开启一个线程*/
     thread5->start();
-    qDebug()<<"主线程id："<<QThread::currentThreadId();
+    qDebug()<<"thread id："<<QThread::currentThreadId();
 }
 
 void Widget::closeThreadSlot5()
 {
-    /*关闭多线程*/
-    qDebug()<<tr("关闭线程5");
+    qDebug()<<tr("close thread5");
     if(thread5->isRunning())
      {
        thread5->closeThread();
@@ -297,6 +285,7 @@ void Widget::Delay(int mSec)
     QTimer::singleShot(mSec, &loop, SLOT(quit()));
     loop.exec();
 }
+
 
 /*           MPU            */
 void Widget::read_mpu_data()
@@ -324,14 +313,7 @@ void Widget::read_mpu_data()
             QString x = QString::number(Ax);
             QString y = QString::number(Ay);
             QString z = QString::number(Az); 
-/*
-            char *a;
-            QByteArray ba=x.toLatin1();
-            a=ba.data();
 
-            ui->value->setText("Ax="+x+","+"Ay="+y+","+"Az="+z);
-            this->tcpSocket->write(a);
-*/
             Delay(500);
             NetData ssData;
             if (Acc_x>5000 &&Acc_x<16000 ){
@@ -452,7 +434,7 @@ void Widget::dht11_init()
 
     qDebug()<<tr("Enter OS-------\n");
 
-//    qtimer->start(100);
+    
 }
 
 uint8 Widget::read_dht11_dat()
@@ -506,7 +488,6 @@ void Widget::data_display(double &x, double &y)
 {
     pinMode(pinNumber,OUTPUT); // set mode to output
     digitalWrite(pinNumber, 1);// output a high level
-    //dht_read = false;
     Delay(3000);
     if(read_dht11_dat())
     {
@@ -515,21 +496,15 @@ void Widget::data_display(double &x, double &y)
         ui->tem->setText(tmp);
         ui->hum->setText(rh);
 
-//        NetData ssData;
         double val1=tmp.toDouble();
         double val2=rh.toDouble();
         x = val1;
         y = val2;
-//        dht_read = true;
-//        printf("Congratulations ! Sensor data read ok!\n");
-//        printf("RH:%d.%d\n",(databuf>>24)&0xff,(databuf>>16)&0xff);
-//        printf("TMP:%d.%d\n",(databuf>>8)&0xff,databuf&0xff);
         databuf=0;
     }
     else
     {
-//        ui->lb_tmpdisplay->setText("Sorry! Sensor dosent ans!");
-//        printf("Sorry! Sensor dosent ans!\n");
+
         databuf=0;
     }
 }
