@@ -27,10 +27,9 @@ public:
     struct NetData
     {
      unsigned int length;
- //    unsigned int n1;
      double d1;
      double d2;
-     char name[32]; //这里数组可以，注意如果是指针指向堆空间，堆里数据要自己copy
+     char name[32];      //  array
     };
 
 
