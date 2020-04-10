@@ -125,7 +125,6 @@ void MyThread5::run()
     {
 
         qDebug()<<tr("stop");
-     //  sleep(3);
         stop();
     }
          isStop=false;
@@ -144,7 +143,6 @@ void MyThread1::forward()
     softPwmWrite(pwm_tilt,15);
     QThread::msleep(300);
     softPwmWrite(pwm_left,15);
-   // QThread::msleep(500);
     softPwmWrite(pwm_right,15);
     QThread::msleep(500);
 
@@ -163,7 +161,6 @@ void MyThread2::backward()
     softPwmWrite(pwm_tilt,15);
     QThread::msleep(300);
     softPwmWrite(pwm_left,15);
-    //QThread::msleep(500);
     softPwmWrite(pwm_right,15);
     QThread::msleep(500);
 
@@ -182,7 +179,6 @@ void MyThread3::left()
     softPwmWrite(pwm_tilt,15);
     QThread::msleep(300);
     softPwmWrite(pwm_left,15);
-   // QThread::msleep(500);
     softPwmWrite(pwm_right,15);
     QThread::msleep(500);
 
@@ -201,7 +197,6 @@ void MyThread4::right()
     softPwmWrite(pwm_tilt,15);
     QThread::msleep(300);
     softPwmWrite(pwm_left,15);
-    //QThread::msleep(500);
     softPwmWrite(pwm_right,15);
     QThread::msleep(500);
 
@@ -211,11 +206,8 @@ void MyThread4::right()
 void MyThread5::stop()
 {
     softPwmWrite(pwm_tilt,15);
-  //  QThread::msleep(800);
     softPwmWrite(pwm_left,15);
-  //  QThread::msleep(800);
     softPwmWrite(pwm_right,15);
-  //  QThread::msleep(800);
 
 }
 
