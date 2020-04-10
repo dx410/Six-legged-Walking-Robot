@@ -17,3 +17,5 @@ QT
 2. laptop can send command to control the servos to make robot move
 3. robot could recieve sensors data and send to the laptop, showing on GUI
 4. laptop can get the video from camera on the Raspberry Pi
+# project video on twitter  
+https://twitter.com/SLrobot
