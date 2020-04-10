@@ -21,7 +21,7 @@ Widget::Widget(QWidget *parent)
 
 /*     TCP    */
     tcpSocket = new QTcpSocket(this);
-    this->serverAddress = "192.168.191.2"; //  IP
+    this->serverAddress = "192.168.191.2"; //  IP (rpi)
     this->serverPort = 50007 ;//  PORT
     connect(tcpSocket,SIGNAL(readyRead()),this,SLOT(readdata()));
 }
@@ -37,8 +37,6 @@ void Widget::sendforward()
 {
     if(tcpSocket->state() == QAbstractSocket::ConnectedState)
     {
-       // QByteArray data = "forward";
-       // char* str = data.data();
         tcpSocket->write ("forward");
         tcpSocket->waitForBytesWritten(300);
     }
@@ -132,22 +130,14 @@ void Widget::disconnectserver()
 }
 
 
-void Widget::readdata()
+void Widget::readdata()     //  receive data from sensors
 {
-/*
-    QByteArray receiveDate = tcpSocket->readAll();
-    QString temp = receiveDate;
-   // ui->text_tem->insertPlainText(temp);
-    ui->MPU_state->setText(temp);
-*/
+
     QByteArray dataArray =tcpSocket->readAll();
     const NetData* pData = (const NetData*)(dataArray.data());
     QString strShow = tr("WELCOME! \r\n");
     strShow += tr("Length = %1\r\n").arg(pData->length);
-//    strShow += tr("n1 = %1\r\n").arg(pData->n1);
-//    strShow += tr("d1 = %1\r\n").arg(pData->d1);
-//    strShow += tr("d2 = %1\r\n").arg(pData->d2);
-//    strShow += tr("name = %1\r\n").arg(pData->name);
+
     QString temp = tr(" %1\r").arg(pData->d1);
     ui->dht_tem->setText(temp);
     QString humi = tr(" %1\r").arg(pData->d2);
