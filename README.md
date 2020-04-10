@@ -19,3 +19,5 @@ QT
 4. laptop can get the video from camera on the Raspberry Pi
 # project video on twitter  
 https://twitter.com/SLrobot
+# contributors
+dx410 - Xiao Deng - entire code ; unit testing ( except sensors and video )
