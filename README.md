@@ -21,4 +21,5 @@ QT
 https://twitter.com/SLrobot
 # contributors
 dx410 - Xiao Deng - entire code integration ; unit testing ( except sensors and video )  
-Lei5218- Lei Zhao - Hardware parts (include PCB and Machine building）；sensor code parts;
+Lei5218- Lei Zhao - Hardware parts (include PCB and Machine building）；sensor code parts;  
+YuXiang Tong - Help with coding and Manufacturing of mechanical parts; Realize real-time video function; 
