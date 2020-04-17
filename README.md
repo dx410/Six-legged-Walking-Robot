@@ -17,6 +17,8 @@ QT
 2. laptop can send command to control the servos to make robot move
 3. robot could recieve sensors data and send to the laptop, showing on GUI
 4. laptop can get the video from camera on the Raspberry Pi
+# GUI interface
+![image](https://github.com/dx410/Six-legged-Walking-Robot/blob/master/images/Gui.PNG)
 # Project video on twitter  
 https://twitter.com/SLrobot
 # Contributors
