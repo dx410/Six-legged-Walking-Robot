@@ -11,7 +11,7 @@ Raspberry Pi exclusive camera
 Temperature and humidity sensor dht11  
 space movement sensor MPU6050 
 # Software 
-QT
+QT Creator
 # Implementation method: 
 1. use TCP to communicate with Raspberry Pi and laptop
 2. laptop can send command to control the servos to make robot move
